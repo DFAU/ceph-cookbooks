@@ -38,7 +38,7 @@ def find_node_ip_in_network(network, nodeish=nil)
     end
     if net.ipv4?
       iface[1]["routes"].each_with_index do |route, index|
-        if iface[1]["routes"][index]["destination"] == network
+        if iface[1]["routes"][index]["src"] && iface[1]["routes"][index]["destination"] == network
           return "#{iface[1]["routes"][index]["src"]}:6789"
         end
       end
