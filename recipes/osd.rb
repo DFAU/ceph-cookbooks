@@ -105,6 +105,7 @@ else
     #  - $cluster should always be ceph
     #  - The --dmcrypt option will be available starting w/ Cuttlefish
     unless node["ceph"]["osd_devices"].nil?
+p node["ceph"]["osd_devices"]
       node["ceph"]["osd_devices"].each_with_index do |osd_device,index|
 p osd_device
         if not osd_device["status"].nil?
